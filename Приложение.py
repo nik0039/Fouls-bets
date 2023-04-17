@@ -43,7 +43,7 @@ def get_all_team_matches(team, stat_teams, stats, mode, similiar_teams):
 
 
 def clasterization(settings, cup):
-    df1 = pd.read_csv('FoulsDataset_Season_' + cup + '_2021-2022_SofaScore.csv')
+    df1 = pd.read_csv('FoulsDataset_Season_' + cup + '_2022-2023_SofaScore.csv')
     km_silhouette = []
     stats = ['Team1', 'Team2', 'Team1_Ball_possession', 'Team2_Ball_possession', 'Team1_Yellow_cards',
              'Team2_Yellow_cards', 'Team1_PPDA', 'Team2_PPDA',
@@ -118,7 +118,7 @@ def main():
     print(champs)
     Cup = champs[int(input())]
 
-    df = pd.read_csv(f'FoulsDataset_Season_{Cup}_2021-2022_SofaScore.csv')
+    df = pd.read_csv(f'FoulsDataset_Season_{Cup}_2022-2023_SofaScore.csv')
     df.Coef_1 = df.Coef_1.round(2)
     df.Coef_2 = df.Coef_2.round(2)
     teams = df['Team1'].unique()
@@ -295,13 +295,13 @@ def main():
                 print(t)
                 print('------------------------------------------------------------------------')
 
-        regressor = joblib.load(f"\\Модели\\Linear Regression {Cup}.pkl")
+        regressor = joblib.load(f"\Модели\Linear Regression {Cup}.pkl")
 
-        elastic_net = joblib.load(f"\\Модели\\ElasticNet {Cup}.pkl")
-        bayesian_ridge = joblib.load(f"\\Модели\\Bayesian Ridge {Cup}.pkl")
-        huber_reg = joblib.load(f"\\Модели\\Huber Regression {Cup}.pkl")
-        kr = joblib.load(f"\\Модели\\Kernel Ridge {Cup}.pkl")
-        theil_sen = joblib.load(f"\\Модели\\TheilSen {Cup}.pkl")
+        elastic_net = joblib.load(f"\Модели\ElasticNet {Cup}.pkl")
+        bayesian_ridge = joblib.load(f"\Модели\Bayesian Ridge {Cup}.pkl")
+        huber_reg = joblib.load(f"\Модели\Huber Regression {Cup}.pkl")
+        kr = joblib.load(f"\Модели\Kernel Ridge {Cup}.pkl")
+        theil_sen = joblib.load(f"\Модели\TheilSen {Cup}.pkl")
 
         models = [regressor, elastic_net, bayesian_ridge, huber_reg, kr, theil_sen]
         table = PrettyTable()
