@@ -295,13 +295,13 @@ def main():
                 print(t)
                 print('------------------------------------------------------------------------')
 
-        regressor = joblib.load(f"\Модели\Linear Regression {Cup}.pkl")
+        regressor = joblib.load(f"Модели\\Linear Regression {Cup}.pkl")
 
-        elastic_net = joblib.load(f"\Модели\ElasticNet {Cup}.pkl")
-        bayesian_ridge = joblib.load(f"\Модели\Bayesian Ridge {Cup}.pkl")
-        huber_reg = joblib.load(f"\Модели\Huber Regression {Cup}.pkl")
-        kr = joblib.load(f"\Модели\Kernel Ridge {Cup}.pkl")
-        theil_sen = joblib.load(f"\Модели\TheilSen {Cup}.pkl")
+        elastic_net = joblib.load(f"Модели\\ElasticNet {Cup}.pkl")
+        bayesian_ridge = joblib.load(f"Модели\\Bayesian Ridge {Cup}.pkl")
+        huber_reg = joblib.load(f"Модели\\Huber Regression {Cup}.pkl")
+        kr = joblib.load(f"Модели\\Kernel Ridge {Cup}.pkl")
+        theil_sen = joblib.load(f"Модели\\TheilSen {Cup}.pkl")
 
         models = [regressor, elastic_net, bayesian_ridge, huber_reg, kr, theil_sen]
         table = PrettyTable()
@@ -331,9 +331,9 @@ def main():
         print('-----------------------------------------------------------------------')
         print('Фол для анализа:')
 
-        df1 = pd.read_csv(r'Датасеты\FoulsDataset_Season_' + Cup + '_2019-2020_SofaScore.csv')
-        df2 = pd.read_csv(r'Датасеты\FoulsDataset_Season_' + Cup + '_2020-2021_SofaScore.csv')
-        df3 = pd.read_csv(r'Датасеты\FoulsDataset_Season_' + Cup + '_2021-2022_SofaScore.csv')
+        df1 = pd.read_csv(r'Датасеты\\FoulsDataset_Season_' + Cup + '_2019-2020_SofaScore.csv')
+        df2 = pd.read_csv(r'Датасеты\\FoulsDataset_Season_' + Cup + '_2020-2021_SofaScore.csv')
+        df3 = pd.read_csv(r'Датасеты\\FoulsDataset_Season_' + Cup + '_2021-2022_SofaScore.csv')
         df_train = pd.concat([df1, df2, df3], ignore_index=True)
 
         books_fouls = float(input())
